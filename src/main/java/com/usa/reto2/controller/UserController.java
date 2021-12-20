@@ -16,7 +16,7 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @GetMapping("/all")
+    @PostMapping("/all")
     public List<User> getAll(){
         return userService.getAll();
     }
@@ -33,7 +33,7 @@ public class UserController {
     }
 
     @PutMapping("/update")
-    @ResponseStatus(HttpStatus.ACCEPTED)
+    @ResponseStatus(HttpStatus.CREATED)
     public User update(@RequestBody User user){
         return userService.update(user);
     }
